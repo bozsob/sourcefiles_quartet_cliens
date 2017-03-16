@@ -1,33 +1,43 @@
 import java.io.Serializable;
 import java.util.List;
 
-/**
- * Created by trixi on 2017.03.16..
- */
-public class Message implements Serializable{
-
+public class Message implements Serializable
+{
     private boolean winner;
     private List<String> cardIDlist;
     private String clientResponse;
+    private String currentCard;
+    private String lastWinner;
 
-    public Message(boolean winner, List<String> cardIDlist) {
+    public Message(boolean winner, List<String> cardIDlist)
+    {
         this.winner = winner;
         this.cardIDlist = cardIDlist;
     }
 
-    public Message(String clientResponse) {
+    public Message(String clientResponse)
+    {
         this.clientResponse = clientResponse;
     }
 
-    public boolean isWinner() {
+    public Message(String currentCard, String lastWinner)
+    {
+        this.currentCard = currentCard;
+        this.lastWinner = lastWinner;
+    }
+
+    public boolean isWinner()
+    {
         return winner;
     }
 
-    public List<String> getCardIDlist() {
+    public List<String> getCardIDlist()
+    {
         return cardIDlist;
     }
 
-    public String getClientResponse() {
+    public String getClientResponse()
+    {
         return clientResponse;
     }
 }
